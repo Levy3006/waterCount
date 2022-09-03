@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+
+        #divcentro {
+            text-align: center;
+            padding: 45px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+
+
+        }
+        #nav-bar{
+            text-align: center;
+            background-color: green;
+            color: white;
+            padding: 15px;
+            font-size: 25px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #btn{
+            background-color: green;
+            padding:10px;
+            border-style: none;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 5px;
+            position: relative;
+            right:145px;
+            text-align: center;
+            font-size: 20px;
+            
+        }
+        #btn:hover{
+            background-color: black;
+            transition: 0.5s;
+        }
+       #aviso{
+        padding: 55px;
+        text-align: center;
+        font-size: 14px;
+       }
+      
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav id="nav-bar">Bem vindo ao WaterCount!</nav>
+    <div id="divcentro">
+    <br>
+    <label for="idade"> Digite sua idade (anos): </label>
+    <input type="number" id="idade">
+    <br>
+    <br>
+    <label for="peso">Digite seu peso    ( kg  )      : </label>
+    <input type="number" id="peso">
+    <br>
+    <br>
+    <form>
+        <input type="button" onclick="calcularAgua()" id="btn" value="Calcular">
+    </form>
+    <div id="aviso"> Obs: Se você costuma fazer atividades de alta intensidade liberando muito suor, não se esqueça de beber agua antes, durante e depois da atividade! </div>
+</div>
+    
+    <script type="text/javascript">
+        
+        function calcularAgua(){
+            var age = document.getElementById("idade").value;
+            var weigth = document.getElementById("peso").value;
+            if (age<=17){
+                var agua1 = weigth*(0.04);
+                alert(`voce precisa beber ${agua1} litros de água por dia`);
+            
+            }else if(age>=18 && age<=55){
+                var agua2 = weigth*(0.035);
+                alert(`voce precisa beber ${agua2} litros de água por dia`);
+
+            }else if(age>=56 && age<=66){
+                var agua3 = weigth*(0.030);
+                alert(`voce precisa beber ${agua3} litros de água por dia`);
+                
+            }else if (age>66){
+                var agua4 = weigth*(0.025);
+                alert(`voce precisa beber ${agua4} litros de água por dia`);
+            }else{
+                alert("insira uma idade válida!");
+            }
+        }
+    </script>
+   
+</body>
+</html>
