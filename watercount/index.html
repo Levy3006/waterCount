@@ -1,0 +1,138 @@
+<!--
+    
+    Bem vindos ao Watercount! este projeto é fruto de horas de estudo tanto de html e css, como principalmente de javascript. Passei horas estilizando, tentando resolver os bugs e tentando deixar tudo o mais funcional possível. Não sou profissional na area, apenas um amador que começou a estudar javascript, css e html há algumas semanas! Estou aberto a feedbacks. Você pode me mandar um email para levypinheiro2022@gmail.com ou enviar uma mensagem para meu número pessoal: 85 996144501. Espero que gostem do resultado.
+
+        Atenciosamente, Levy. 
+    
+    --->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        #creator {
+            font-size: 15px;
+            padding: 0%;
+        }
+        #divcentro {
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+            padding: 45px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            width: 600px;
+            height: 450px;
+            border-style: solid;
+            border-color: green;
+            border-radius: 15px;
+        }
+        #nav-bar{
+            text-align: center;
+            width: 640px;
+            position: relative;
+            right: 45px;
+            background-color: green;
+            color: white;
+            padding: 25px;
+            padding-bottom: 6px;
+            margin-bottom: 45px;
+            margin-top: -45px;
+            font-size: 25px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 10px;
+        }
+        #btn{
+            background-color: green;
+            padding:10px;
+            border-style: none;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 5px;
+            position: relative;
+            right:145px;
+            text-align: center;
+            font-size: 20px       
+        }
+        #btn:hover{
+            background-color: black;
+            padding: 13px;
+            transition: 0.3s;
+        }
+       #aviso{
+        padding: 35px;
+        font-size: 16px;
+        text-align: center;
+        width: 500px;
+        margin: auto;    
+       }
+       #resultado{
+        transition: 0.5s;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+       }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="divcentro">
+    <nav id="nav-bar">Bem vindo ao WaterCount!<br> 
+        <p id="creator">By Levi Alves</p>
+    </nav>
+    <br>
+    <label for="idade"> Digite sua idade (anos): </label>
+    <input type="number" id="idade">
+    <br>
+    <br>
+    <label for="peso">Digite seu peso    ( kg  )      : </label>
+    <input type="number" id="peso">
+    <br>
+    <br>
+    
+    <form>
+        <input type="button" onclick="calcularAgua()" id="btn" value="Calcular">
+    </form>
+    <br>
+    <br>
+    <div id="resultado">
+
+    </div>
+    <div id="aviso"> Obs: Se você costuma fazer atividades de alta intensidade liberando muito suor, não se esqueça de beber água antes, durante e depois da atividade! </div>
+    
+</div>
+    
+    <script type="text/javascript">
+        
+        function calcularAgua(){
+            var age = document.getElementById("idade").value;
+            var weigth = document.getElementById("peso").value;
+            if (age<=17 && age>0 && weigth>0){
+                var agua1 = weigth*(0.04);
+                document.getElementById("resultado").innerText =`Você precisa beber ${agua1.toFixed(2)} litros de água por dia!`;
+                
+            
+            }else if(age>=18 && age<=55 && weigth>0){
+                var agua2 = weigth*(0.035);
+                document.getElementById("resultado").innerText =`Você precisa beber ${agua2.toFixed(2)} litros de água por dia!`;
+             
+
+            }else if(age>=56 && age<=66 && weigth>0){
+                var agua3 = weigth*(0.030);
+                document.getElementById("resultado").innerText =`Você precisa beber ${agua3.toFixed(2)} litros de água por dia!`;
+                
+            }else if (age>66 && weigth>0){
+                var agua4 = weigth*(0.025);
+                document.getElementById("resultado").innerText =`Você precisa beber ${agua4.toFixed(2)} litros de água por dia!`;
+            }else {
+                alert("Por favor, insira idade e peso válidos!");
+            }
+        }
+    </script>  
+</body>
+</html>
